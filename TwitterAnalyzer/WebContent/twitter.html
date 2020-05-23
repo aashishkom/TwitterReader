@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Twitter Analyzer">
+<meta name="keywords"
+	content="Find How Positive Celelbrities Are Considered In Society">
+<meta name="author" content="Aashish Komaragiri">
+<title>Percentage of Positivity</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			<div id="branding">
+				<h1>
+					<span class="highlight">Celebrity </span>Analyzer
+				</h1>
+			</div>
+			<nav>
+				<ul>
+					<li><a class="current" href="indexOne.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="services.html">Services</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+
+	<section id="newsletter">
+		<div class="container">
+			<h1>Please Enter Any Person</h1>
+			<form action="twitter.html" method="get">
+				<input type="text" placeholder="Enter Name" name="tweet"><br>
+				<button type="submit" class="button_1">Search</button>
+			</form>
+		</div>
+	</section>
+
+	<section id="main">
+		<div id="donutchart" style="width: 900px; height: 500px;"></div>
+		<ul>
+			<li>Positive Tweets: 
+				<ul>
+					<li>Example 1</li>
+					<li>Example 2</li>
+					<li>Example 3</li>
+					<li>Example 4</li>
+				</ul>
+			</li>
+		</ul>
+		<ul>
+			<li>Negative Tweets: 
+				<ul>
+					<li>Example 1</li>
+					<li>Example 2</li>
+					<li>Example 3</li>
+					<li>Example 4</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="container">
+			<article id="main-col">
+				<h1 class="page-title">Percent of Positivity</h1>
+				<p>The Percent of Positivity surrounding + user + is + sum + %</p>
+
+				<script type="text/javascript"
+					src="https://www.gstatic.com/charts/loader.js"></script>
+				<script type="text/javascript">
+					google.charts.load("current", {
+						packages : [ "corechart" ]
+					});
+					google.charts.setOnLoadCallback(drawChart);
+					function drawChart() {
+						var data = google.visualization.arrayToDataTable([
+								[ 'Percent of Positivity', '%' ],
+								[ 'Positive  Tweets', 11 ],
+								[ 'Negative Tweets', 2 ],
+
+						]);
+
+						var options = {
+							title : 'Analyzing Tweets for Certain Person',
+							pieHole : 0.4,
+						};
+
+						var chart = new google.visualization.PieChart(document
+								.getElementById('donutchart'));
+						chart.draw(data, options);
+					}
+				</script>
+
+			</article>
+		</div>
+	</section>
+	<footer>
+		<p>Aashish Web Design, Copyright &copy; 2017</p>
+
+	</footer>
+</body>
+</html>
